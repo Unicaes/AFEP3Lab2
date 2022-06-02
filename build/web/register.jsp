@@ -39,7 +39,7 @@
                     <label class="col-3">Nivel de estudio</label>
                     <select name="nivel_de_estudio" class="col-9 form-select">
                         <option value="nulo">nulo</option>
-                        <option value="básico">básico</option>
+                        <option value="basico">básico</option>
                         <option value="intermedio">intermedio</option>
                         <option value="superior">superior</option>
                     </select>
