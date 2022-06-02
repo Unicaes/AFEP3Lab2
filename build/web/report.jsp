@@ -1,12 +1,15 @@
 <%@taglib prefix="s" uri="/struts-tags"%>
 <html>
 <head>
-<title>Report</title>
+<title>Reporte</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
+    crossorigin="anonymous">
 <style>
     #searchBar {
       font-size: 16px;
-      padding: 15px;
-      border: 1px solid #ddd;
+      padding: 6px 10px 6px 10px;
+      border: 2px solid #ddd;
       margin-bottom: 12px;
     }
 
@@ -14,11 +17,11 @@
       border-collapse: collapse;
       width: 100%;
       border: 1px solid #ddd;
-      font-size: 18px;
+      font-size: 16px;
     }
 
     #tableEncuesta th, #tableEncuesta td {
-      text-align: left;
+      text-align: center;
       padding: 12px;
     }
 
@@ -26,25 +29,19 @@
       border-bottom: 1px solid #ddd;
     }
 
-    #tableEncuesta tr.header, #myTable tr:hover {
-      background-color: #f1f1f1;
-    }
-
-    table, td, th {border: 1px solid black;}
-    table {border-collapse: collapse;width: 60%;}
+    table, td, th {border: 1px solid #363636;}
     th {height: 30px;}
     .button-update {background-color: #008CBA;color: white;}
-    .button-delete {background-color: red;color: white;}
-
 </style>
 </head>
 <body style="padding: 50px;">
-	<h2>Struts 2 Create, Read, Update and Delete (CRUD) Example using JDBC</h2>
+	<h3>Reporte: Resúmen de encuestas registradas</h3>
+        
 	<div style="margin-top: 40px;">
             <s:if test="noData==true">
                 
-                <input type="text" id="searchBar" onkeyup="myFunction()" placeholder="Buscar a personas...">
-                <br><br>
+                <input type="text" id="searchBar" onkeyup="myFunction()" placeholder="Búsqueda de personas...">
+                <br>
                 
                 <table id="tableEncuesta">
                     <thead>
@@ -56,6 +53,7 @@
                             <th>Mivel de estudio</th>
                             <th>Tema favorito</th>
                             <th>Fecha registrada</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <s:iterator value="beanList">
@@ -69,7 +67,7 @@
                             <td><s:property value="fecha_registrada" /></td>
                             <td>
                                 <a href="deleterecord.action?uemail=<s:property value="encuesta_id"/>">
-                                    <button class="button-delete">Delete</button>
+                                    <button class="btn btn-danger btn-md btn-block">Remover</button>
                                 </a>
                             </td>
                         </tr>
@@ -80,6 +78,11 @@
                     <div style="color: red;">No Data Found.</div>
             </s:else>
 	</div>
+        <br>
+        <a href="register.jsp"><button class="btn btn-outline-dark" type="button"style="margin-right:10px;">
+           Registro de encuestas</button>
+        </a>
+        <a href="Graphic.jsp"><button class="btn btn-outline-dark" type="button">Resultados de encuestas</button></a>
 </body>
 
 <script>
