@@ -7,6 +7,9 @@
 		<action name="registeruser" class="Model.RegisterAction">
 			<result name="REGISTER">/register.jsp</result>
 		</action>
+                <action name="modifyencuesta" class="Model.EncuestaAction">
+			<result name="WTD">/register.jsp</result>
+		</action>
 		<action name="report" class="Model.ReportAction">
 			<result name="REPORT">/report.jsp</result>
 		</action>

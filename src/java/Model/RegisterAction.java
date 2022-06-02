@@ -24,6 +24,10 @@ public class RegisterAction extends ActionSupport {
         admin = new Admin();
 
         try {
+            if (!Singleton.OpenEncuestas) {
+                msg="Las encuestas estan cerradas";
+                return "REGISTER";
+            }
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
             fecha_registrada=dtf.format(LocalDateTime.now());
             ctr = admin.registerUser(nombre, sexo, deporte_favorito, nivel_de_estudio, tema_favorito, fecha_registrada);

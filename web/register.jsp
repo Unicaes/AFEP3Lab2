@@ -58,6 +58,10 @@
                 <input class="btn btn-primary" type="submit" value="Register"/>
             </div>
 	</s:form>
+        <s:form action="modifyencuesta.action" method="post">
+            <button class="btn btn-danger" type="submit" value="0" name="wtd">Cerrar encuesta</button>
+            <button class="btn btn-success" type="submit" value="1" name="wtd">Abrir encuesta</button>
+        </s:form>
 	<s:if test="ctr>0">
 		<span style="color: green;"><s:property value="msg" /></span>
 	</s:if>
