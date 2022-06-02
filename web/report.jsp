@@ -79,10 +79,14 @@
             </s:else>
 	</div>
         <br>
-        <a href="register.jsp"><button class="btn btn-outline-dark" type="button"style="margin-right:10px;">
+        <a href="register.jsp"><button class="btn btn-outline-dark" type="button" style="margin-right:10px;">
            Registro de encuestas</button>
         </a>
-        <a href="Graphic.jsp"><button class="btn btn-outline-dark" type="button">Resultados de encuestas</button></a>
+        <br>
+        <br>
+        <s:form action="GraphicReport.action" method="post">
+            <button class="btn btn-outline-dark" type="submit">Resultados de encuestas</button>
+        </s:form>
 </body>
 
 <script>
