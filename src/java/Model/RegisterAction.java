@@ -5,79 +5,96 @@
  */
 package Model;
 
-
 import com.opensymphony.xwork2.ActionSupport;
+import java.sql.Date;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class RegisterAction extends ActionSupport {
 
-	private static final long serialVersionUID = 2139116285823340125L;
-	private String uname, uemail, upass, udeg;
-	private String msg = "";
-	Admin admin = null;
-	int ctr = 0;
+    private static final long serialVersionUID = 2139116285823340125L;
+    private String nombre, sexo, deporte_favorito, nivel_de_estudio, tema_favorito;
+    private String fecha_registrada;
+    private String msg = "";
+    Admin admin = null;
+    int ctr = 0;
 
-	@Override
-	public String execute() throws Exception {
-		admin = new Admin();
+    @Override
+    public String execute() throws Exception {
+        admin = new Admin();
 
-		try {
-			ctr = admin.registerUser(uname, uemail, upass, udeg);
-			if (ctr > 0) {
-				msg = "Registration Successfull";
-			} else {
-				msg = "Some error";
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return "REGISTER";
-	}
+        try {
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
+            fecha_registrada=dtf.format(LocalDateTime.now());
+            ctr = admin.registerUser(nombre, sexo, deporte_favorito, nivel_de_estudio, tema_favorito, fecha_registrada);
+            if (ctr > 0) {
+                msg = "Registration Successfull";
+            } else {
+                msg = "Some error";
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "REGISTER";
+    }
 
-	public String getUname() {
-		return uname;
-	}
+    public String getNombre() {
+        return nombre;
+    }
 
-	public void setUname(String uname) {
-		this.uname = uname;
-	}
+    public String getSexo() {
+        return sexo;
+    }
 
-	public String getUemail() {
-		return uemail;
-	}
+    public String getDeporte_favorito() {
+        return deporte_favorito;
+    }
 
-	public void setUemail(String uemail) {
-		this.uemail = uemail;
-	}
+    public String getNivel_de_estudio() {
+        return nivel_de_estudio;
+    }
 
-	public String getUpass() {
-		return upass;
-	}
+    public String getTema_favorito() {
+        return tema_favorito;
+    }
 
-	public void setUpass(String upass) {
-		this.upass = upass;
-	}
+    public String getFecha_registrada() {
+        return fecha_registrada;
+    }
 
-	public String getUdeg() {
-		return udeg;
-	}
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-	public void setUdeg(String udeg) {
-		this.udeg = udeg;
-	}
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
 
-	public String getMsg() {
-		return msg;
-	}
+    public void setDeporte_favorito(String deporte_favorito) {
+        this.deporte_favorito = deporte_favorito;
+    }
 
-	public void setMsg(String msg) {
-		this.msg = msg;
-	}
+    public void setNivel_de_estudio(String nivel_de_estudio) {
+        this.nivel_de_estudio = nivel_de_estudio;
+    }
 
-	public int getCtr() {
-		return ctr;
-	}
+    public void setTema_favorito(String tema_favorito) {
+        this.tema_favorito = tema_favorito;
+    }
 
-	public void setCtr(int ctr) {
-		this.ctr = ctr;
-	}
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public int getCtr() {
+        return ctr;
+    }
+
+    public void setCtr(int ctr) {
+        this.ctr = ctr;
+    }
 }

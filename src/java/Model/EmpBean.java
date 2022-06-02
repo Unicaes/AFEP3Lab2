@@ -5,50 +5,84 @@
  */
 package Model;
 
+import java.sql.Date;
+
 public class EmpBean {
 	
 	// generate getter and setters
-	private String uname, uemail, upass, udeg;
-	int srNo;
+	private String nombre, sexo, deporte_favorito, nivel_de_estudio,tema_favorito;
+	int encuesta_id;
+        
+        Date fecha_registrada;
 
-    public String getUname() {
-        return uname;
+    
+
+    public int getEncuesta_id() {
+        return encuesta_id;
     }
 
-    public String getUemail() {
-        return uemail;
+    public void setEncuesta_id(int encuesta_id) {
+        this.encuesta_id = encuesta_id;
     }
 
-    public String getUpass() {
-        return upass;
+    
+
+        
+        
+    public String getNombre() {
+        return nombre;
     }
 
-    public String getUdeg() {
-        return udeg;
+    public String getSexo() {
+        return sexo;
     }
 
-    public int getSrNo() {
-        return srNo;
+    public String getDeporte_favorito() {
+        return deporte_favorito;
     }
 
-    public void setUname(String uname) {
-        this.uname = uname;
+    public String getNivel_de_estudio() {
+        return nivel_de_estudio;
     }
 
-    public void setUemail(String uemail) {
-        this.uemail = uemail;
+    public String getTema_favorito() {
+        return tema_favorito;
     }
 
-    public void setUpass(String upass) {
-        this.upass = upass;
+    public int getId() {
+        return encuesta_id;
     }
 
-    public void setUdeg(String udeg) {
-        this.udeg = udeg;
+    public Date getFecha_registrada() {
+        return fecha_registrada;
     }
 
-    public void setSrNo(int srNo) {
-        this.srNo = srNo;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public void setDeporte_favorito(String deporte_favorito) {
+        this.deporte_favorito = deporte_favorito;
+    }
+
+    public void setNivel_de_estudio(String nivel_de_estudio) {
+        this.nivel_de_estudio = nivel_de_estudio;
+    }
+
+    public void setTema_favorito(String tema_favorito) {
+        this.tema_favorito = tema_favorito;
+    }
+
+    public void setId(int id) {
+        this.encuesta_id = id;
+    }
+
+    public void setFecha_registrada(Date fecha_registrada) {
+        this.fecha_registrada = fecha_registrada;
     }
         
 }

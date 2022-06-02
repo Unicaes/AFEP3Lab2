@@ -10,11 +10,12 @@
 		<action name="report" class="Model.ReportAction">
 			<result name="REPORT">/report.jsp</result>
 		</action>
-		<action name="updatedetails" class="Model.UpdateAction">
-			<result name="UPDATE">/update.jsp</result>
+		<action name="GraphicReport" class="Model.GraphicAction">
+			<result name="GRAPHIC_REPORT">/Graphic.jsp</result>
 		</action>
 		<action name="deleterecord" class="Model.DeleteAction">
 			<result name="DELETE">/delete.jsp</result>
 		</action>
+                
 	</package>
 </struts>

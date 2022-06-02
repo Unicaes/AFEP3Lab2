@@ -9,8 +9,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import Model.EmpBean;
-import Model.Admin;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -26,18 +24,20 @@ public class ReportAction extends ActionSupport {
 	@Override
 	public String execute() throws Exception {
 		try {
-			beanList = new ArrayList<EmpBean>();
+			beanList = new ArrayList();
 			rs = admin.report();
 			int i = 0;
 			if (rs != null) {
 				while (rs.next()) {
 					i++;
 					bean = new EmpBean();
-					bean.setSrNo(i);
-					bean.setUname(rs.getString("UNAME"));
-					bean.setUemail(rs.getString("UEMAIL"));
-					bean.setUpass(rs.getString("UPASS").replaceAll("(?s).", "*"));
-					bean.setUdeg(rs.getString("UDEG"));
+					bean.setEncuesta_id(rs.getInt("encuesta_id"));
+					bean.setNombre(rs.getString("nombre"));
+					bean.setSexo(rs.getString("sexo"));
+					bean.setDeporte_favorito(rs.getString("deporte_favorito"));
+					bean.setNivel_de_estudio(rs.getString("nivel_de_estudio"));
+					bean.setTema_favorito(rs.getString("tema_favorito"));
+					bean.setFecha_registrada(rs.getDate("fecha_registrada"));
 					beanList.add(bean);
 				}
 			}

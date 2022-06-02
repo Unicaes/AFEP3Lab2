@@ -17,26 +17,26 @@ th {height: 30px;}
 			<table>
 				<thead>
 					<tr style="background-color: #E0E0E1;">
-						<th>Sr.No.</th>
-						<th>Name</th>
-						<th>Email</th>
-						<th>Password</th>
-						<th>Designation</th>
-						<th>Action</th>
+						<th>ID</th>
+						<th>Nombre</th>
+						<th>Sexo</th>
+						<th>Deporte favorito</th>
+						<th>Mivel de estudio</th>
+						<th>Tema favorito</th>
+						<th>Fecha registrada</th>
 					</tr>
 				</thead>
 				<s:iterator value="beanList">
 					<tr>
-						<td><s:property value="srNo" /></td>
-						<td><s:property value="uname" /></td>
-						<td><s:property value="uemail" /></td>
-						<td><s:property value="upass" /></td>
-						<td><s:property value="udeg" /></td>
+						<td><s:property value="encuesta_id" /></td>
+						<td><s:property value="nombre" /></td>
+						<td><s:property value="sexo" /></td>
+						<td><s:property value="deporte_favorito" /></td>
+						<td><s:property value="nivel_de_estudio" /></td>
+						<td><s:property value="tema_favorito" /></td>
+						<td><s:property value="fecha_registrada" /></td>
 						<td>
-							<a href="updatedetails.action?submitType=updatedata&uemail=<s:property value="uemail"/>">
-								<button class="button-update">Update</button>
-							</a>
-							<a href="deleterecord.action?uemail=<s:property value="uemail"/>">
+                                                            <a href="deleterecord.action?uemail=<s:property value="encuesta_id"/>">
 								<button class="button-delete">Delete</button>
 							</a>
 						</td>
